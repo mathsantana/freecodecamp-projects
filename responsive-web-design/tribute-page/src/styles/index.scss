@@ -1,6 +1,9 @@
 @import 'normalize';
 $height-footer: 50px;
-  
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   position: relative;
