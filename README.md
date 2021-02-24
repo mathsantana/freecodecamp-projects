@@ -1,5 +1,15 @@
-# freecodecamp-projects
-Projects from Freecodecamp Curriculum.
+# Freecodecamp Projects
+
+<figure>
+  <img src="./assets/fcc_primary_large.jpg" alt="my alt text"/>
+  <figcaption>
+  <em>freeCodeCamp (also referred to as “Free Code Camp”) is a non-profit organization that consists of an interactive learning web platform, an online community forum, chat rooms, online publications and local organizations that intend to make learning web development accessible to anyone.</em>
+  </figcaption>
+</figure>
+
+</br>
+
+I strongly believe we learn from pratice. So I chose the freeCodeCamp platform to be my place to practice and really learn about all topics (especially *web development*) that I'm interesed in. (And because it's _free_ 😉) 
 
 </br>
 
@@ -15,25 +25,25 @@ Projects from Freecodecamp Curriculum.
   <tbody>
   <tr>
     <td rowspan="5">Responsive Web Design</td>
-    <td>Tribute Page</td>
-    <td style="color:yellow">IN PROGRESS</td>
+    <td><a href="https://mathsantana.github.io/freecodecamp-projects/responsive-web-design/tribute-page" alt="Tribute Page" >Tribute Page</td>
+    <td>DONE</td>
     <td rowspan="5"> <img src="./assets/incomplete-certificate.png" alt="Missing certificate"></td>
   </tr>
   <tr>
     <td>Survey Form</td>
-    <td style="color:red">NOT DONE</td>
+    <td>NOT DONE</td>
   </tr>
   <tr>
     <td>Product Landing Page</td>
-    <td style="color:red">NOT DONE</td>
+    <td>NOT DONE</td>
   </tr>
   <tr>
     <td>Technical Documentation Page</td>
-    <td style="color:red">NOT DONE</td>
+    <td>NOT DONE</td>
   </tr>
   <tr>
     <td>Personal Portfolio Webpage</td>
-    <td style="color:red">NOT DONE</td>
+    <td>NOT DONE</td>
   </tr>
 
   </tbody>
