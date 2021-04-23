@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./src/styles/index.css">
+  <title>Survey Form</title>
+</head>
+<body>
+  <script src="./src/scripts/index.js"></script>
+
+  <main id="container">
+    <div id="box">
+      <section id="header">
+        <h1 id="title">Film Survey</h1>
+      </section>
+
+      <section id="content">
+        <p id="description">Tell us about your preferred film genres!</p> 
+        <form method="POST" action="https://form.taxi/s/sd2emqw1" id="survey-form">
+          <p id="msg-submit"></p>
+
+          <div class="input-box">
+            <label id="name-label" for="name">Name</label>
+            <input type="text" id="input-name" name="name" placeholder="Full Name" required/>
+          </div>
+
+          <div class="input-box">
+            <label id="email-label"for="email">Email</label>
+            <input type="email" id="input-email" name="email" placeholder="Email" required/>
+          </div>
+
+
+          <div class="line-input">
+            <div class="input-box">
+              <label id="number-label" for="number">Age</label>
+              <input type="number" id="input-date" name="date" min="0" max="125" placeholder="Age" required autocomplete="off"/>
+            </div>
+
+            <div class="input-box">
+              <label for="dropdown-gender">Gender: </label>
+              <select name="gender" id="dropdown-gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+          </div>
+
+          <p>What film genres do you like?</p>
+          <input type="checkbox" name="film-genre" id="checkbox-action" name="action" />
+          <label for="action">Action</label>
+          <input type="checkbox" name="film-genre" id="checkbox-comedy" name="comedy" />
+          <label for="comedy">Comedy</label>
+          <input type="checkbox" name="film-genre" id="checkbox-drama" name="drama" />
+          <label for="drama">Drama</label>
+          <input type="checkbox" name="film-genre" id="checkbox-fantasy" name="fantasy" />
+          <label for="fantasy">Fantasy</label>
+          <br>
+          <input type="checkbox" name="film-genre" id="checkbox-horror" name="horror" />
+          <label for="horror">Horror</label>
+          <input type="checkbox" name="film-genre" id="checkbox-mystery" name="mystery" />
+          <label for="mystery">Mystery</label>
+          <input type="checkbox" name="film-genre" id="checkbox-romance" name="romance" />
+          <label for="romance">Romance</label>
+          <input type="checkbox" name="film-genre" id="checkbox-thriller" name="thriller" />
+          <label for="thriller">Thriller</label>
+
+          <br/>
+
+          <label for="best-movie">In your opinion, the best movie of all times is: </label>
+          <input name="best-movie" id="best-movie" size="3" list="datalist" autocomplete="off">
+          </input>
+
+          <p>Tell me about what you like in a movie:</p>
+          <textarea name="comments" id="comments" cols="30" rows="10" ></textarea>
+          
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span id="footer-text">
+      Copyright © 2021 <a href="https://mathsantana.github.io/">Matheus Santana</a>
+    </span>
+  </footer>
+</body>
+</html>
