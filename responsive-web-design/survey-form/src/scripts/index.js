@@ -39,8 +39,8 @@ const cleanDatalist = () => {
 
 const getMovieApiData = (e) => {
   const search = e.target.value;
-  search.length >= 3 &&
-    !isInDataList(e.target, search) &&
+  if (search.length >= 3 && !isInDataList(e.target, search)) {
+    setLoading(true);
     fetch(`http://www.omdbapi.com/?apikey=9b48c924&s=${search}`)
       .then((response) => {
         return response.json();
@@ -51,8 +51,18 @@ const getMovieApiData = (e) => {
           return { Title: value.Title, imdbID: value.imdbID };
         });
         insertFilmsInDataList(movieList);
+        setLoading(false);
+      })
+      .catch((e) => {
+        console.error(e);
+        setLoading(false);
       });
-  search.length < 3 && cleanDatalist();
+  } else if (search.length < 3) cleanDatalist();
+};
+
+const setLoading = (load) => {
+  const loader = document.getElementById("loader");
+  loader.style.display = load ? "block" : "none";
 };
 
 let surveyForm = document.getElementById("survey-form");

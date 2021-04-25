@@ -8,12 +8,11 @@
   <title>Survey Form</title>
 </head>
 <body>
-  <script src="./src/scripts/index.js"></script>
 
   <main id="container">
     <div id="box">
       <section id="header">
-        <h1 id="title">Film Survey</h1>
+        <h1 id="title">Movies Survey</h1>
       </section>
 
       <section id="content">
@@ -21,26 +20,27 @@
         <form method="POST" action="https://form.taxi/s/sd2emqw1" id="survey-form">
           <p id="msg-submit"></p>
 
-          <div class="input-box">
-            <label id="name-label" for="name">Name</label>
-            <input type="text" id="input-name" name="name" placeholder="Full Name" required/>
-          </div>
+          <div class="line-input">
+            <div class="input-box">
+              <label id="name-label" for="name">Name:</label>
+              <input type="text" id="name" name="name" placeholder="Full Name" required/>
+            </div>
 
-          <div class="input-box">
-            <label id="email-label"for="email">Email</label>
-            <input type="email" id="input-email" name="email" placeholder="Email" required/>
+            <div class="input-box">
+              <label id="email-label"for="email">Email:</label>
+              <input type="email" id="email" name="email" placeholder="Email" required/>
+            </div>
           </div>
-
 
           <div class="line-input">
             <div class="input-box">
-              <label id="number-label" for="number">Age</label>
-              <input type="number" id="input-date" name="date" min="0" max="125" placeholder="Age" required autocomplete="off"/>
+              <label id="number-label" for="number">Age:</label>
+              <input type="number" id="number" name="date" min="0" max="125" placeholder="Age" required autocomplete="off"/>
             </div>
 
             <div class="input-box">
               <label for="dropdown-gender">Gender: </label>
-              <select name="gender" id="dropdown-gender">
+              <select name="gender" id="dropdown">
                 <option value="male">Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
@@ -49,44 +49,85 @@
             
           </div>
 
-          <p>What film genres do you like?</p>
-          <input type="checkbox" name="film-genre" id="checkbox-action" name="action" />
-          <label for="action">Action</label>
-          <input type="checkbox" name="film-genre" id="checkbox-comedy" name="comedy" />
-          <label for="comedy">Comedy</label>
-          <input type="checkbox" name="film-genre" id="checkbox-drama" name="drama" />
-          <label for="drama">Drama</label>
-          <input type="checkbox" name="film-genre" id="checkbox-fantasy" name="fantasy" />
-          <label for="fantasy">Fantasy</label>
-          <br>
-          <input type="checkbox" name="film-genre" id="checkbox-horror" name="horror" />
-          <label for="horror">Horror</label>
-          <input type="checkbox" name="film-genre" id="checkbox-mystery" name="mystery" />
-          <label for="mystery">Mystery</label>
-          <input type="checkbox" name="film-genre" id="checkbox-romance" name="romance" />
-          <label for="romance">Romance</label>
-          <input type="checkbox" name="film-genre" id="checkbox-thriller" name="thriller" />
-          <label for="thriller">Thriller</label>
+          <div id="box-radio">
+            <p id="text-radio">
+              Do you consider yourself a cinephile?
+            </p>
+              <input type="radio" id="yes" name="cinephile" value="cinephile-yes"/>
+              <label for="yes">Yes</label>
+              <input type="radio" id="no" name="cinephile" value="cinephile-no"/>
+              <label for="no">No</label>
 
-          <br/>
 
-          <label for="best-movie">In your opinion, the best movie of all times is: </label>
-          <input name="best-movie" id="best-movie" size="3" list="datalist" autocomplete="off">
-          </input>
+          </div>
 
-          <p>Tell me about what you like in a movie:</p>
-          <textarea name="comments" id="comments" cols="30" rows="10" ></textarea>
+          <p id="text-checkbox">What film genres do you like?</p>
+        
+            
+          <div class="container-checkbox">
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-action" name="action" value="action" />
+              <label for="action">Action</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-drama" name="drama" value="drama"/>
+              <label for="drama">Drama</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-comedy" name="comedy" value="comedy"/>
+              <label for="comedy">Comedy</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-fantasy" name="fantasy" value="fantasy"/>
+              <label for="fantasy">Fantasy</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-horror" name="horror" value="horror"/>
+              <label for="horror">Horror</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-romance" name="romance" value="romance"/>
+              <label for="romance">Romance</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-mystery" name="mystery" value="mystery"/>
+              <label for="mystery">Mystery</label>
+            </div>
+            <div class="box-checkbox">
+              <input type="checkbox" name="film-genre" id="checkbox-thriller" name="thriller" value="thriller"/>
+              <label for="thriller">Thriller</label>
+            </div>
+          </div>
+
+            
+            <br/>
+
+            <div class="box-best-movie">
+              <label for="best-movie">In your opinion, the best movie of all times is: </label>
+              <input name="best-movie" id="best-movie" size="3" list="datalist" autocomplete="off">
+              </input>
+              <div id="loader"></div>
+            </div>
+            
+            
+            <p>Tell me about what you like in a movie:</p>
+            <textarea name="comments" id="comments" cols="30" rows="10" ></textarea>
+            <button id="submit" type="submit">Submit</button>
+      </form>
+          </section>
+      </div>
           
-          <button type="submit">Submit</button>
-        </form>
+    </main>
+    <footer>
+    <section id="footer-text">
+        <span>
+          Copyright © 2021 <a href="https://mathsantana.github.io/">Matheus Santana</a>
+        </span>     
       </section>
-    </div>
-  </main>
+    </footer>
 
-  <footer>
-    <span id="footer-text">
-      Copyright © 2021 <a href="https://mathsantana.github.io/">Matheus Santana</a>
-    </span>
-  </footer>
-</body>
+    <script src="./src/scripts/index.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
 </html>
+              

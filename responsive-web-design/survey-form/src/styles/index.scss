@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap");
-@import "normalize";
+@import "reset";
 $height-footer: 50px;
 
 * {
@@ -8,17 +8,39 @@ $height-footer: 50px;
 }
 
 body {
+  position: relative;
+  min-height: 100vh;
   font-family: "Montserrat", sans-serif;
-  background-color: rgb(241, 241, 241);
+  background: rgb(245, 245, 245);
+  background: linear-gradient(
+    180deg,
+    rgb(250, 250, 250) 0%,
+    rgb(245, 245, 245) 100%
+  );
+}
+
+body::after {
+  content: " ";
+  display: block;
+  height: 100px;
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 #container {
   display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100vw;
   justify-content: center;
+  align-items: center;
+
   #box {
+    width: 90%;
+    max-width: 700px;
     margin-top: 30px;
-    padding: 20px;
     border-radius: 15px;
     background-color: rgb(252, 252, 252);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
@@ -27,39 +49,165 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     #header {
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background: rgb(8, 8, 140);
+      background: linear-gradient(
+        90deg,
+        rgba(8, 8, 140, 1) 0%,
+        rgba(0, 212, 255, 1) 100%
+      );
       text-align: center;
+      height: 75px;
+      clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+
+      #title {
+        margin-top: 15px;
+        color: white;
+        font-size: 28px;
+        text-shadow: 2px 1px 3px rgba(150, 150, 150, 1);
+      }
+    }
+    #content {
+      margin: 20px;
+
+      #description {
+        font-style: italic;
+        text-align: center;
+        margin: 15px 0;
+      }
+
+      #text-checkbox {
+        margin: 15px 0;
+      }
+
+      .box-best-movie {
+        margin: 20px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        > label {
+          text-align: justify;
+          margin-right: 10px;
+        }
+        #best-movie {
+          width: 30%;
+          min-width: 100px;
+        }
+      }
+
+      #box-radio {
+        > p {
+          text-align: justify;
+          margin: 10px 0;
+        }
+      }
+
+      #comments {
+        display: block;
+        margin: 20px auto;
+        width: 400px;
+      }
+
+      #submit {
+        display: block;
+        margin: 40px 10px 0 auto;
+        background: rgb(8, 8, 140);
+        background: linear-gradient(
+          90deg,
+          rgba(8, 8, 140, 1) 0%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        border: 0 solid transparent;
+        color: #f3f3f3;
+        border-radius: 30px;
+        padding: 10px 20px;
+      }
     }
   }
 
   .input-box {
+    margin: 5px 5px;
     display: flex;
     flex-direction: column;
+    width: 45%;
+    min-width: 200px;
   }
 
   .line-input {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
-}
-
-body::after {
-  content: "";
-  display: block;
-  height: $height-footer;
+  .container-checkbox {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    .box-checkbox {
+      margin: 5px;
+      min-width: 25%;
+    }
+  }
 }
 
 footer {
   display: flex;
-  position: absolute;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: $height-footer;
+  position: absolute;
   bottom: 0;
-  background-color: rgb(245, 245, 245);
+
+  #footer-text {
+    border-top: 1px solid rgb(219, 219, 219);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+  }
 }
 
 a:link,
 a:visited {
   color: blue;
+}
+
+#loader {
+  display: none;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  margin: 0 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 511px) {
+  #container {
+    .input-box {
+      width: 100%;
+    }
+
+    #box {
+      #content {
+        #comments {
+          width: 100%;
+        }
+      }
+    }
+  }
 }

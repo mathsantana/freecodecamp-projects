@@ -60,7 +60,9 @@ const watch = () => {
       baseDir: "./",
     },
   });
-  gulp.watch("responsive-web-design/**/src/styles/**/*.scss", styles); // Watch the sass files for changes
+  gulp
+    .watch("responsive-web-design/**/src/styles/**/*.scss", styles)
+    .on("change", browserSync.reload); // Watch the sass files for changes
   gulp
     .watch("responsive-web-design/**/**/*.html", html)
     .on("change", browserSync.reload); // Watch the JS files for changes
